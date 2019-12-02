@@ -10,8 +10,7 @@ import android.widget.Toast;
 
 import com.example.nfc_gacor.APIService.APIClient;
 import com.example.nfc_gacor.APIService.APIInterfacesRest;
-import com.example.nfc_gacor.adapter.PembayaranAdapter;
-import com.example.nfc_gacor.adapter.TopUpAdapter;
+import com.example.nfc_gacor.adapter.ProdukAdapter;
 
 import com.example.nfc_gacor.model.produk.ModelProduk;
 
@@ -24,8 +23,8 @@ import retrofit2.Response;
 
 public class ProdukActivity extends AppCompatActivity {
 RecyclerView rcv;
-PembayaranAdapter itemList2;
-    ModelProduk modelproduk;
+ProdukAdapter itemList2;
+ModelProduk modelproduk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,7 @@ PembayaranAdapter itemList2;
                             .from(Row.class)
                             .queryList(); */
 
-                     itemList2 = new PembayaranAdapter(modelproduk.getData().getProduk());
+                     itemList2 = new ProdukAdapter(modelproduk.getData().getProduk());
                     rcv.setLayoutManager(new LinearLayoutManager(ProdukActivity.this));
                     rcv.setItemAnimator(new DefaultItemAnimator());
                     rcv.setAdapter(itemList2);
