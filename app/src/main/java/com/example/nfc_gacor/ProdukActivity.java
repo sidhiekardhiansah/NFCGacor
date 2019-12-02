@@ -37,9 +37,9 @@ PembayaranAdapter itemList2;
 
     private void getProduk() {
         final APIInterfacesRest apiInterface = APIClient.getClient().create(APIInterfacesRest.class);
-        final Call<ModelProduk> nikita = apiInterface.getProduk("5965E901D62F1F7913717CCF9347443B");
+        final Call<ModelProduk> produk = apiInterface.getProduk("5965E901D62F1F7913717CCF9347443B");
 
-        nikita.enqueue(new Callback<ModelProduk>() {
+        produk.enqueue(new Callback<ModelProduk>() {
             @Override
             public void onResponse(Call <ModelProduk> call, Response<ModelProduk> response) {
                modelproduk =  response.body();
